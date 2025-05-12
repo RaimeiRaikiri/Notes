@@ -12,5 +12,5 @@ class User(db.Model, UserMixin):
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     data = db.Column(db.String(10000), nullable=True, unique=False)
-    date = db.Columm(db.DateTime(timezone=True), default=func.now())
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
