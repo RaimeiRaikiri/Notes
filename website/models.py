@@ -4,7 +4,7 @@ from sqlalchemy.sql import func
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(120), nullable=False, unqiue=True)
+    email = db.Column(db.String(120), nullable=False, unique=True)
     first_name = db.Column(db.String(120), nullable=False, unique=False)
     password = db.Column(db.String(120), nullable=False, unique=False)
     notes = db.relationship('Note')
