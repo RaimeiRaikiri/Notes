@@ -23,7 +23,6 @@ def home():
     return render_template("home.html", user=current_user)
 
 @views.route('/delete-note', methods=["DELETE"])
-@login_required
 def delete_note():
     if request.method == "DELETE":
         note_id = request.json.get("noteId")
